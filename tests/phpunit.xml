@@ -20,4 +20,9 @@
          timeoutForLargeTests="15"
          strict="true"
          verbose="true">
+   <testsuites>
+      <testsuite name="ExampleTest">
+         <directory>./</directory>
+      </testsuite>
+   </testsuites>
 </phpunit>
