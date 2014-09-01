@@ -1,0 +1,15 @@
+{
+    "name": "opendojo/phpunit-testing",
+    "authors": [
+        {
+            "name": "Sébastien Barbieri",
+            "email": "seba@rtbf.be"
+        }
+    ],
+    "require": {
+
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.2.*"
+    }
+}
