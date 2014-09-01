@@ -1,6 +1,6 @@
 <?php
 
-namespace RTBFTest\Entity;
+namespace OpendojoTest\Entity;
 
 class ImageTest extends \PHPUnit_Framework_TestCase {
     public function setUp() {
@@ -15,7 +15,7 @@ class ImageTest extends \PHPUnit_Framework_TestCase {
         $image = new Image();
         # fixture
         $filename = 'image.jpg';
-        
+
         $image->setFilename($filename);
         $this->assertAttributeEquals($filename, 'filename', $image);
     }

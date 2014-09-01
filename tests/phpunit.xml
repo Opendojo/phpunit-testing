@@ -21,7 +21,7 @@
          strict="true"
          verbose="true">
    <testsuites>
-      <testsuite name="ExampleTest">
+      <testsuite name="OpenDojoTest">
          <directory>./</directory>
       </testsuite>
    </testsuites>
