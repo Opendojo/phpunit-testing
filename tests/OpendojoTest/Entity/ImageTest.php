@@ -3,6 +3,7 @@
 namespace OpendojoTest\Entity;
 
 use \Opendojo\Entity\Image;
+use \Opendojo\Entity\Exception;
 
 class ImageTest extends \PHPUnit_Framework_TestCase {
     public function setUp() {
@@ -57,8 +58,26 @@ class ImageTest extends \PHPUnit_Framework_TestCase {
         return [
             ['image.jpg', 'image/jpeg'],
             ['image.png', 'image/png'],
-            ['image.gif', 'image/gif'],
-            ['image.bmp', null]
+            ['image.gif', 'image/gif']
         ];
+    }
+
+    /**
+     * @dataProvider getImagesExceptions
+     * @expectedException \Opendojo\Entity\Exception
+     * @expectedExceptionCode \Opendojo\Entity\Exception::INVALID_EXTENSION
+     */
+    public function testImageTypeGetterThrowsExceptionForInvalidFilename($filename) {
+        $image = new Image();
+        $image->setFilename($filename);
+        $image->getType();
+    }
+
+    public function getImagesExceptions(){
+        return [
+            ['image.bmp'],
+            ['image.vnd'],
+            ['image']
+        ];        
     }
 }
