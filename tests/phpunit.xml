@@ -21,8 +21,11 @@
          strict="true"
          verbose="true">
    <testsuites>
-      <testsuite name="OpenDojoTest">
+      <testsuite name="OpendojoTest">
          <directory>./</directory>
       </testsuite>
    </testsuites>
+   <php>
+      <ini name="date_timezone" value="Europe/Brussels" />
+   </php>
 </phpunit>
