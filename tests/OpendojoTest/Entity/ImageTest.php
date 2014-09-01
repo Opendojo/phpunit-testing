@@ -2,6 +2,8 @@
 
 namespace OpendojoTest\Entity;
 
+use \Opendojo\Entity\Image;
+
 class ImageTest extends \PHPUnit_Framework_TestCase {
     public function setUp() {
 
@@ -9,6 +11,13 @@ class ImageTest extends \PHPUnit_Framework_TestCase {
 
     public function tearDown() {
 
+    }
+
+    public function testFluentInterfaceOnSetFileNameSetter() {
+        $image = new Image();
+        # fixture
+        $filename = 'image.jpg';
+        $this->assertSame($image,$image->setFilename($filename));
     }
 
     public function testFienameSetterSetProperty() {
@@ -19,4 +28,6 @@ class ImageTest extends \PHPUnit_Framework_TestCase {
         $image->setFilename($filename);
         $this->assertAttributeEquals($filename, 'filename', $image);
     }
+
+    
 }
