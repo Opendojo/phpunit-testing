@@ -2,8 +2,9 @@
 
 namespace OpendojoTest\Entity;
 
-use \Opendojo\Entity\Image;
-use \Opendojo\Entity\Exception;
+use org\bovigo\vfs\vfsStream;
+use Opendojo\Entity\Image;
+use Opendojo\Entity\Exception;
 
 class ImageTest extends \PHPUnit_Framework_TestCase {
     public function setUp() {
@@ -55,10 +56,12 @@ class ImageTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function getImages() {
+        vfsStream::setup();
+        $rootDir = vfsStream::copyFromFileSystem(__DIR__.'/../_files/images/', null, 10000000);
         return [
-            ['image.jpg', 'image/jpeg'],
-            ['image.png', 'image/png'],
-            ['image.gif', 'image/gif']
+            [$rootDir->url().'/image.jpg', 'image/jpeg'],
+            [$rootDir->url().'/image.png', 'image/png'],
+            [$rootDir->url().'/image.gif', 'image/gif']
         ];
     }
 
